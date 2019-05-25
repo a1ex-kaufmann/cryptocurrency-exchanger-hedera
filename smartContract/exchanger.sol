@@ -104,13 +104,13 @@ contract Excalibur is SafeMath {
     Order(tokenGet, amountGet, tokenGive, amountGive, expires, nonce, msg.sender, hash);
   }
 
-  function trade(address tokenGet, uint amountGet, address tokenGive, uint amountGive, uint expires, uint nonce, address user, uint8 v, bytes32 r, bytes32 s, uint amount, string pair) {
+  function trade(address tokenGet, uint amountGet, address tokenGive, uint amountGive, address user, uint8 v, bytes32 r, bytes32 s, uint amount, string pair) {
     // amount is in amountGet terms
-    bytes32 hash = sha3(this, tokenGet, amountGet, tokenGive, amountGive, expires, nonce);
+    bytes32 hash = sha3(this, tokenGet, amountGet, tokenGive, amountGive);
     if (!( (orders[user][hash] || ecrecover(sha3("\x19Ethereum Signed Message:\n32", hash),v,r,s) == user) && block.number <= expires && safeAdd(orderFills[user][hash], amount) <= amountGet)) throw;
     tradeBalances(tokenGet, amountGet, tokenGive, amountGive, user, amount);
     orderFills[user][hash] = safeAdd(orderFills[user][hash], amount);
-    Trade(tokenGet, amount, tokenGive, amountGive * amount / amountGet, user, msg.sender, hash, pair);
+    //Trade(tokenGet, amount, tokenGive, amountGive * amount / amountGet, user, msg.sender, hash, pair);
   }
 
   function tradeBalances(address tokenGet, uint amountGet, address tokenGive, uint amountGive, address user, uint amount) private {

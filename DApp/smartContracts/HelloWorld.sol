@@ -1,6 +1,4 @@
-pragma solidity ^0.5.0;
-
-import "./SafeMath.sol";
+pragma solidity ^0.5.3;
 
 contract HelloWorld {
  function getInt () public pure returns (uint) {
@@ -10,6 +8,6 @@ contract HelloWorld {
    return "John says hi";
  }
  function sum (uint a, uint b) public pure returns (uint) {
-   return SafeMath.mul(a,b);
+   return a + b;
 }
 }
