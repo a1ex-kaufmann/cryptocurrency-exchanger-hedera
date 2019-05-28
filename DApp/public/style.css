@@ -1,0 +1,53 @@
+*{
+    padding: 0; /*сброс отступов у ВСЕХ эл-от на странице*/
+    margin: 0;
+}
+header {
+    width: 100%;
+    background: black;
+    height: 50px;
+    color: aliceblue;
+    font-family: 'Roboto mono', monospace;
+    font-size: 20pt;
+    position: fixed; /*фиксация хедер*/
+    z-index: 100;
+    top: 0; /*глобальный отступ д/хедер*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+
+.right_panel {
+    margin-right: 5%;
+    font-size: 20pt;
+}
+main {
+    margin-top: 50px;
+    background-color: #202020;
+    display: flex;
+    justify-content: space-around;
+    height: 600px;
+}
+main div {
+    width: 600px;
+}
+.form{
+    border: 1px solid #fff; /*delete*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#form1{
+    border: 1px solid #fff; /*delete*/
+    width: 80%;
+    height: 500px;
+}
+.orders{
+    border: 1px solid #fff; /*delete*/
+}
+
+footer {
+    background: black;
+    height: 70px;
+}

@@ -23,11 +23,12 @@ function Excalibur_(nodeAddress, nodeAccount, selectedOS = "Linux") {
 	
 	// Importing methods from this framework for working with it
 	//this.targetOS
-	this.hederaLibrary = NodeFFI.Library("./lib/rust_hedera_sdk/target/debug/libhedera.so", {
+	this.hederaLibrary = NodeFFI.Library("lib/libhedera.so", {
 		get_account: ["string", ["string", "string", "string", "string"]],
 		create_file_from_file: ["string", ["string", "string", "string", "string", "string"]],
+		append_file: ["string", ["string", "string", "string", "string", "string", "string"]],
 		create_contract: ["string", ["string", "string", "string", "string", "string", "string"]],
-		call_contract: ["string", ["string", "string", "string", "string", "string", "string", "string", "string", "string"]],
+		call_contract: ["string", ["string", "string", "string", "string", "string", "string", "string", "string", "string", "string"]],
 		get_sdk_version: ["string", []]
 	});
 	
@@ -46,6 +47,9 @@ Excalibur_.prototype.createFileFromFile = function (userAccount, userPrivateKey,
 	return this.hederaLibrary.create_file_from_file(userAccount, this.nodeAddress, this.nodeAccount, userPrivateKey, pathToFile);
 }
 
+Excalibur_.prototype.appendFile = function (userAccount, userPrivateKey, fileID, appendText) {
+	return this.hederaLibrary.append_file(userAccount, this.nodeAddress, this.nodeAccount, userPrivateKey, fileID, appendText);
+}
 
 // This method allows you to create a contract
 Excalibur_.prototype.createContract = function (userAccount, userPrivateKey, fileID, gasValue) {
@@ -54,8 +58,8 @@ Excalibur_.prototype.createContract = function (userAccount, userPrivateKey, fil
 
 
 // This method allows you to call a smart contract using a method from it
-Excalibur_.prototype.callContract = function (userAccount, userPrivateKey, contractID, gasValue, pathToABI, methodName, arguments) {
-	return this.hederaLibrary.call_contract(userAccount, this.nodeAddress, this.nodeAccount, userPrivateKey, contractID, gasValue, pathToABI, methodName, arguments);
+Excalibur_.prototype.callContract = function (userAccount, userPrivateKey, contractID, gasValue, pathToABI, methodName, amount, arguments) {
+	return this.hederaLibrary.call_contract(userAccount, this.nodeAddress, this.nodeAccount, userPrivateKey, contractID, gasValue, pathToABI, methodName, amount, arguments);
 }
 
 
