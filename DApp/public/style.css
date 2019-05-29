@@ -45,6 +45,26 @@ main div {
 }
 .orders{
     border: 1px solid #fff; /*delete*/
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+table {
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+    width: 100%;
+}
+
+tr {
+    width: 100%;
+    height: 50px;
+}
+
+td {
+    justify-content: center;
+    align-items: center;
 }
 
 footer {

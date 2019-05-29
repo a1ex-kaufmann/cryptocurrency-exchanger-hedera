@@ -14,11 +14,30 @@
     </header>
     <main>
    <div class="form">
-      <div id="form1">
-
-      </div>
+       <form action="/makeOrder" method="post">
+           <table>
+               <tr>
+                   <td>Buy token:</td>
+                   <td><label><input name="typeBuyToken"/></label></td>
+               </tr>
+               <tr>
+                   <td>Amount:</td>
+                   <td><label><input name="amountBuyToken"/></label></td>
+               </tr>
+               <tr>
+                   <td>Sell token:</td>
+                   <td><label><input name="typeSellToken"/></label></td>
+               </tr>
+               <tr>
+                   <td>Amount:</td>
+                   <td><label><input name="amountSellToken"/></label></td>
+               </tr>
+           </table>
+           <input type="button" onclick="this.form.submit()" value="Отправить">
+       </form>
    </div>
    <div class="orders">
+    <div id="orderTable"></div>
    </div>
     </main>
     <footer></footer>
