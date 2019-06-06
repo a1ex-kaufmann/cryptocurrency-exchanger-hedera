@@ -65,7 +65,7 @@ function makeOrder(orderDara) {
 function getUserBalance(userAccount) {
     let methodName = "order";
     let amount = "0";
-    excalibur.createContract(userAccount, userPrivateKey, contractID, gasValue, pathToAbi, methodName, amount, arguments)
+    excalibur.callContract(userAccount, userPrivateKey, contractID, gasValue, pathToAbi, methodName, amount, arguments)
 }
 
 
