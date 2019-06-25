@@ -76,7 +76,7 @@ const excalibur = new Excalibur_(nodeAddress, nodeAccount);
 
 // TODO убрать заплатку
 const userAccount = "0.0.1016";
-const userPrivateKey = "302e020100300506032b657004220420f1deb5b97bb94e413e70e50cc0c06542e5572882949ef63375ae232f634493a8";
+const userPrivateKey = "00000000000000000000000000000000";
 
 // контракт и его ABI, к котому обращаемся
 const contractID = "0:0:1281";
