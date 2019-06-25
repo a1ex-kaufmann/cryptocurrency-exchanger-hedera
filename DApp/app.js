@@ -65,7 +65,7 @@ function makeOrder(orderDara) {
 function getUserBalance(userAccount) {
     let methodName = "order";
     let amount = "0";
-    excalibur.createContract(userAccount, userPrivateKey, contractID, gasValue, pathToAbi, methodName, amount, arguments)
+    excalibur.callContract(userAccount, userPrivateKey, contractID, gasValue, pathToAbi, methodName, amount, arguments)
 }
 
 
@@ -141,5 +141,10 @@ app.get("/getOrders", function(request, response){
     response.send(respondedData);
 });
 
+<<<<<<< HEAD
 //TODO исправить порт
 app.listen(3300);
+=======
+// TODO исправить порт
+app.listen(3300);
+>>>>>>> 70da879966fb1518d905ed524d62ec83b322124d
